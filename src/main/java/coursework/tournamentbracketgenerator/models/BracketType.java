@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "tournament_types")
+@Table(name = "bracket_types")
 @EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor

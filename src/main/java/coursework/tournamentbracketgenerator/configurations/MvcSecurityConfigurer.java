@@ -52,7 +52,7 @@ public class MvcSecurityConfigurer extends WebSecurityConfigurerAdapter implemen
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
                 .antMatchers("/api/auth", "/api/auth/signin", "/api/auth/signup").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/tournaments").permitAll()
-                .antMatchers("/api/users", "/api/roles").hasRole("ADMIN")
+                .antMatchers("/api/users/**", "/api/roles/**", "/api/bracketTypes/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .apply(new JwtConfigurerAdapter(jwtTokenProvider));

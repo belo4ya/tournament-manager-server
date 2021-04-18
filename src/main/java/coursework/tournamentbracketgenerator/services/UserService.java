@@ -5,7 +5,6 @@ import coursework.tournamentbracketgenerator.models.User;
 import coursework.tournamentbracketgenerator.repositories.RoleRepository;
 import coursework.tournamentbracketgenerator.repositories.UserRepository;
 import coursework.tournamentbracketgenerator.security.jwt.JwtTokenProvider;
-import org.hibernate.mapping.Collection;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -13,7 +12,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
