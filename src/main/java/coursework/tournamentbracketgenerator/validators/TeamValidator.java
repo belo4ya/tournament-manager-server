@@ -25,14 +25,14 @@ public class TeamValidator implements Validator {
         Team team = (Team) o;
 
         if (team.getName() == null) {
-            errors.rejectValue("name", "team.name.null");
+            errors.rejectValue("name", "name.null");
         }
-        if (!repository.findByNameIgnoreCase(team.getName()).isEmpty()) {
-            errors.rejectValue("name", "team.name.unique");
+        if (repository.findByName(team.getName()).isPresent()) {
+            errors.rejectValue("name", "name.unique");
         }
 
         if (team.getRating() == null || team.getRating() < 0) {
-            errors.rejectValue("rating", "team.rating");
+            errors.rejectValue("rating", "team.rating.gte");
         }
     }
 }

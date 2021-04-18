@@ -5,9 +5,8 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "tournament_types")
@@ -17,6 +16,9 @@ import javax.persistence.Table;
 @ToString
 public class BracketType extends BaseEntity {
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String type;
+
+    @OneToMany(mappedBy = "type", cascade = CascadeType.ALL)
+    private List<Bracket> brackets;
 }

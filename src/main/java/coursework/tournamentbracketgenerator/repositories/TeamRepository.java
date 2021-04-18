@@ -8,6 +8,7 @@ import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.security.access.prepost.PreAuthorize;
 
 import java.util.List;
+import java.util.Optional;
 
 
 public interface TeamRepository extends JpaRepository<Team, Long> {
@@ -17,5 +18,8 @@ public interface TeamRepository extends JpaRepository<Team, Long> {
     List<Team> findByUser_Username(@Param("username") String username);
 
     @RestResource(path = "by-name", rel = "by-name")
+    Optional<Team> findByName(String name);
+
+    @RestResource(path = "by-name-i", rel = "by-name-i")
     List<Team> findByNameIgnoreCase(String name);
 }

@@ -16,10 +16,11 @@ import java.util.List;
 @ToString
 public class BracketNode extends BaseEntity {
 
+    @Column(nullable = false)
     private Integer round;
 
     @ManyToOne
-    @JoinColumn(name = "bracket_id")
+    @JoinColumn(name = "bracket_id", nullable = false)
     private Bracket bracket;
 
     @OneToMany(mappedBy = "bracketNode")

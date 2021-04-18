@@ -20,7 +20,7 @@ import java.util.List;
 @ToString(exclude = "users")
 public class Role extends BaseEntity {
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String name;
 
     @JsonIgnore

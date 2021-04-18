@@ -32,7 +32,7 @@ public class UserService {
 
     public String register(User user) {
         List<Role> roles = new ArrayList<>();
-        roles.add(roleRepository.findByName("ROLE_USER"));
+        roles.add(roleRepository.findByName("ROLE_USER").orElseThrow());
         user.setRoles(roles);
         user.setPassword(PASSWORD_ENCODER.encode(user.getPassword()));
         User registeredUser = userRepository.save(user);

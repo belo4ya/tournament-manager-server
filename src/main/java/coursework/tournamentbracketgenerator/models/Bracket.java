@@ -17,8 +17,12 @@ import java.util.List;
 public class Bracket extends BaseEntity {
 
     @ManyToOne
-    @JoinColumn(name = "tournament_id")
+    @JoinColumn(name = "tournament_id", nullable = false)
     private Tournament tournament;
+
+    @ManyToOne
+    @JoinColumn(name = "type_id", nullable = false)
+    private BracketType type;
 
     @OneToMany(mappedBy = "bracket", cascade = CascadeType.ALL)
     private List<BracketNode> bracketNodes;

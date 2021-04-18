@@ -19,10 +19,10 @@ import javax.persistence.Table;
 public class BracketNodeTeam extends BaseEntity {
 
     @ManyToOne
-    @JoinColumn(name = "bracket_node_id")
+    @JoinColumn(name = "bracket_node_id", nullable = false)
     private BracketNode bracketNode;
 
     @ManyToOne
-    @JoinColumn(name = "team_id")
+    @JoinColumn(name = "team_id", nullable = false)
     private TournamentTeam team;
 }
