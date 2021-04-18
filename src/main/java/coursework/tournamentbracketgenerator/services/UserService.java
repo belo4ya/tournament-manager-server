@@ -5,6 +5,7 @@ import coursework.tournamentbracketgenerator.models.User;
 import coursework.tournamentbracketgenerator.repositories.RoleRepository;
 import coursework.tournamentbracketgenerator.repositories.UserRepository;
 import coursework.tournamentbracketgenerator.security.jwt.JwtTokenProvider;
+import org.hibernate.mapping.Collection;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -12,6 +13,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -32,13 +35,14 @@ public class UserService {
     }
 
     public String register(User user) {
-        List<Role> roles = user.getRoles()
-                .stream()
-                .map(role -> roleRepository.findByName(role.getName()).orElse(null))
-                .filter(Objects::nonNull)
-                .collect(Collectors.toList());
-        if (roles.isEmpty()) {
-            roles.add(roleRepository.findByName("ROLE_USER").orElseThrow());
+        List<Role> roles = user.getRoles();
+        if (roles != null) {
+            roles = roles.stream()
+                    .map(role -> roleRepository.findByName(role.getName()).orElse(null))
+                    .filter(Objects::nonNull)
+                    .collect(Collectors.toList());
+        } else {
+            roles = Collections.singletonList(roleRepository.findByName("ROLE_USER").orElseThrow());
         }
 
         user.setRoles(roles);
