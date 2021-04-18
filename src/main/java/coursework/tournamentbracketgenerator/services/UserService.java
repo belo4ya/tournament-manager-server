@@ -12,8 +12,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Service
 public class UserService {
@@ -31,8 +32,15 @@ public class UserService {
     }
 
     public String register(User user) {
-        List<Role> roles = new ArrayList<>();
-        roles.add(roleRepository.findByName("ROLE_USER").orElseThrow());
+        List<Role> roles = user.getRoles()
+                .stream()
+                .map(role -> roleRepository.findByName(role.getName()).orElse(null))
+                .filter(Objects::nonNull)
+                .collect(Collectors.toList());
+        if (roles.isEmpty()) {
+            roles.add(roleRepository.findByName("ROLE_USER").orElseThrow());
+        }
+
         user.setRoles(roles);
         user.setPassword(PASSWORD_ENCODER.encode(user.getPassword()));
         User registeredUser = userRepository.save(user);
@@ -45,19 +53,7 @@ public class UserService {
         return jwtTokenProvider.createToken(authorizedUser.getUsername(), authorizedUser.getRoles());
     }
 
-    public List<User> findAll() {
-        return userRepository.findAll();
-    }
-
     public User findByUsername(String username) throws UsernameNotFoundException {
         return userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException(username));
-    }
-
-    public User findById(Long id) {
-        return userRepository.findById(id).orElseThrow();
-    }
-
-    public void delete(Long id) {
-        userRepository.deleteById(id);
     }
 }

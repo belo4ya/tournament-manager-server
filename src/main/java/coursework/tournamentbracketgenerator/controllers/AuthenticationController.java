@@ -1,32 +1,30 @@
 package coursework.tournamentbracketgenerator.controllers;
 
-import coursework.tournamentbracketgenerator.exceptions.JwtAuthenticationException;
 import coursework.tournamentbracketgenerator.models.User;
 import coursework.tournamentbracketgenerator.projections.JwtToken;
 import coursework.tournamentbracketgenerator.repositories.UserRepository;
 import coursework.tournamentbracketgenerator.services.UserService;
+import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@RepositoryRestController
 @RequestMapping("/api/")
 public class AuthenticationController {
+    private final UserRepository repository;
     private final UserService userService;
-    private final UserRepository userRepository;
 
-    public AuthenticationController(UserService userService, UserRepository userRepository) {
+    public AuthenticationController(UserRepository repository, UserService userService) {
+        this.repository = repository;
         this.userService = userService;
-        this.userRepository = userRepository;
     }
 
     @GetMapping("auth")
-    public ResponseEntity<JwtToken> auth(@RequestHeader(name = "Authorization", required = false, defaultValue = "Bearer  ") String authorization) {
-        if (authorization.length() < 8) {
-            throw new AccessDeniedException("ds");
+    public ResponseEntity<JwtToken> auth(@RequestHeader(name = "Authorization", required = false, defaultValue = "") String authorization) {
+        if (authorization.length() < 7) {
+            throw new BadCredentialsException("Неккоректный формат токена");
         }
         return ResponseEntity.ok(new JwtToken(authorization.substring(7)));
     }
@@ -35,27 +33,24 @@ public class AuthenticationController {
     public ResponseEntity<JwtToken> signIn(@RequestBody User user) {
         try {
             return ResponseEntity.ok(new JwtToken(userService.signIn(user)));
-        } catch (JwtAuthenticationException e) {
-            throw new AccessDeniedException(e.getMessage());
         } catch (AuthenticationException e) {
-            throw new BadCredentialsException("Invalid username or password");
+            throw new BadCredentialsException("Неверный username или password");
         }
     }
 
     @PostMapping("auth/signup")
-    public ResponseEntity<JwtToken> register(@Validated @RequestBody User user) {
-        if (userRepository.findByUsername(user.getUsername()).orElse(null) != null) {
-            throw new BadCredentialsException("Username must be unique");
+    public ResponseEntity<JwtToken> signUp(@RequestBody User user) {
+        if (user.getUsername() == null) {
+            throw new BadCredentialsException("Параметр username является обязательным.");
         }
-        if (user.getUsername() == null || user.getPassword() == null) {
-            throw new BadCredentialsException("Username and password are required");
+        if (repository.findByUsername(user.getUsername()).isPresent()) {
+            throw new BadCredentialsException("Параметр username должен быть уникальным.");
         }
 
-        try {
-            return ResponseEntity.ok(new JwtToken(userService.register(user)));
-        } catch (AuthenticationException e) {
-            throw new BadCredentialsException("Invalid username or password");
+        if (user.getPassword() == null) {
+            throw new BadCredentialsException("Параметр password является обязательным.");
         }
+
+        return ResponseEntity.ok(new JwtToken(userService.register(user)));
     }
-
 }
