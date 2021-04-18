@@ -1,0 +1,39 @@
+{
+  "bracket_id": 1,
+  "tours": {
+    "1": [
+      {
+        "teamLeft": 1,
+        "teamRight": 2
+      },
+      {
+        "teamLeft": 3,
+        "teamRight": 4
+      },
+      {
+        "teamLeft": 5,
+        "teamRight": 6
+      },
+      {
+        "teamLeft": 7,
+        "teamRight": 8
+      }
+    ],
+    "2": [
+      {
+        "teamLeft": null,
+        "teamRight": null
+      },
+      {
+        "teamLeft": null,
+        "teamRight": null
+      }
+    ],
+    "3": [
+      {
+        "teamLeft": null,
+        "teamRight": null
+      }
+    ]
+  }
+}
