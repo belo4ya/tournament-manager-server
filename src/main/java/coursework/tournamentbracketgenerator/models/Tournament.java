@@ -16,7 +16,11 @@ import java.util.List;
 @ToString
 public class Tournament extends BaseEntity {
 
+    @Column(nullable = false, unique = true)
     private String name;
+
+    @Column(length = 1024)
+    private String logo;
 
     @ManyToOne
     @JoinColumn(name = "user_id")

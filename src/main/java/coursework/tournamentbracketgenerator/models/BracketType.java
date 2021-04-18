@@ -5,6 +5,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -14,6 +15,8 @@ import javax.persistence.Table;
 @Data
 @NoArgsConstructor
 @ToString
-public class TournamentType extends BaseEntity {
+public class BracketType extends BaseEntity {
+
+    @Column(unique = true)
     private String type;
 }

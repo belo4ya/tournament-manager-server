@@ -1,6 +1,5 @@
 package coursework.tournamentbracketgenerator.models;
 
-import com.fasterxml.jackson.annotation.JsonFilter;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -17,12 +16,13 @@ import java.util.List;
 @ToString
 public class Team extends BaseEntity {
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String name;
 
+    @Column(length = 1024)
     private String logo;
 
-    private Integer rating;
+    private Integer rating = 0;
 
     @ManyToOne
     @JoinColumn(name = "user_id")

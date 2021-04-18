@@ -15,4 +15,7 @@ public interface TeamRepository extends JpaRepository<Team, Long> {
     @RestResource(path = "users", rel = "users")
     @PreAuthorize("#username == authentication?.name")
     List<Team> findByUser_Username(@Param("username") String username);
+
+    @RestResource(path = "by-name", rel = "by-name")
+    List<Team> findByNameIgnoreCase(String name);
 }
