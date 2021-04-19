@@ -13,10 +13,10 @@ import java.util.Optional;
 
 public interface TeamRepository extends JpaRepository<Team, Long> {
 
-    @RestResource(path = "by-name", rel = "by-name")
+    @RestResource(path = "by_name", rel = "by_name")
     Optional<Team> findByName(String name);
 
-    @RestResource(path = "by-name-i", rel = "by-name-i")
+    @RestResource(path = "by_name_i", rel = "by_name_i")
     List<Team> findByNameIgnoreCase(String name);
 
     @RestResource(path = "users", rel = "users")
