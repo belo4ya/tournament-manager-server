@@ -29,7 +29,7 @@ public class AuthenticationController {
         return ResponseEntity.ok(new JwtToken(authorization.substring(7)));
     }
 
-    @PostMapping("auth/signin")
+    @PostMapping("auth/signIn")
     public ResponseEntity<JwtToken> signIn(@RequestBody User user) {
         try {
             return ResponseEntity.ok(new JwtToken(userService.signIn(user)));
@@ -38,7 +38,7 @@ public class AuthenticationController {
         }
     }
 
-    @PostMapping("auth/signup")
+    @PostMapping("auth/signUp")
     public ResponseEntity<JwtToken> signUp(@RequestBody User user) {
         if (user.getUsername() == null) {
             throw new BadCredentialsException("Параметр username является обязательным.");

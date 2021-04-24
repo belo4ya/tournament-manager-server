@@ -8,7 +8,7 @@ import org.springframework.data.rest.core.annotation.RestResource;
 
 import java.util.Optional;
 
-@RepositoryRestResource(excerptProjection = UserProjection.class)
+
 public interface UserRepository extends JpaRepository<User, Long> {
 
     @RestResource(path = "by_username", rel = "by_username")

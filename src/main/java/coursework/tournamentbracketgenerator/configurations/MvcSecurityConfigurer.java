@@ -50,7 +50,7 @@ public class MvcSecurityConfigurer extends WebSecurityConfigurerAdapter implemen
                 .and()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
-                .antMatchers("/api/auth", "/api/auth/signin", "/api/auth/signup").permitAll()
+                .antMatchers("/api/auth", "/api/auth/signIn", "/api/auth/signUp").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/tournaments").permitAll()
                 .antMatchers("/api/users/**", "/api/roles/**", "/api/bracketTypes/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
