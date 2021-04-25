@@ -6,6 +6,7 @@ import coursework.tournamentbracketgenerator.security.jwt.JwtUserDetailsService;
 import coursework.tournamentbracketgenerator.services.UserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.spel.spi.EvaluationContextExtension;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -35,6 +36,11 @@ public class MvcSecurityConfigurer extends WebSecurityConfigurerAdapter implemen
         return super.authenticationManagerBean();
     }
 
+    @Bean
+    EvaluationContextExtension securityExtension() {
+        return new SecurityEvaluationContextExtension();
+    }
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
@@ -52,7 +58,7 @@ public class MvcSecurityConfigurer extends WebSecurityConfigurerAdapter implemen
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
                 .antMatchers("/api/auth", "/api/auth/signIn", "/api/auth/signUp").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/tournaments").permitAll()
-                .antMatchers("/api/users/**", "/api/roles/**", "/api/bracketTypes/**").hasRole("ADMIN")
+                .antMatchers("/api/roles/**", "/api/bracketTypes/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .apply(new JwtConfigurerAdapter(jwtTokenProvider));
