@@ -10,7 +10,6 @@ import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.lang.NonNull;
 import org.springframework.security.access.prepost.PreAuthorize;
 
-import java.util.List;
 import java.util.Optional;
 
 
