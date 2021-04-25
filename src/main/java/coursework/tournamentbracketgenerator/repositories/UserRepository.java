@@ -16,10 +16,6 @@ import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    /*
-    * ОБЩЕДОСТУПНЫЕ
-    * */
-
     @RestResource(path = "my", rel = "my")
     @Query("SELECT u FROM User u WHERE u.username = :#{authentication?.name}")
     Optional<User> findAuthorizedUser();
@@ -28,9 +24,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @NonNull
     Optional<User> findById(@NonNull @Param("id") Long id);
 
-    /*
-    * ВНУТРЕННИЕ
-    * */
+
 
     @RestResource(exported = false)
     Optional<User> findByUsername(String username);
