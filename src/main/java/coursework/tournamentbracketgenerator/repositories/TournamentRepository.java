@@ -30,6 +30,8 @@ public interface TournamentRepository extends JpaRepository<Tournament, Long> {
     @Query("SELECT t FROM Tournament t WHERE t.teams.size between :start AND :end")
     List<Tournament> findByTeamsSizeBetween(@Param("start") Integer start, @Param("end") Integer end);
 
+
+
     @Override
     @PreAuthorize("#tournament?.user == null or #tournament?.user?.username == authentication?.name")
     @NonNull
