@@ -20,7 +20,7 @@ public interface TeamRepository extends JpaRepository<Team, Long> {
     Page<Team> findAllForAuthorizedUser(Pageable p);
 
     @RestResource(path = "like", rel = "like")
-    @Query("SElECT t from Team t WHERE UPPER(t.name) LIKE CONCAT('%', UPPER(:team), '%') AND t.user.username = :#{authentication?.name}")
+    @Query("SElECT t from Team t WHERE UPPER(t.name) LIKE %:team% AND t.user.username = :#{authentication?.name}")
     Page<Team> findAllByNameLike(@Param("team") String team, Pageable p);
 
 
