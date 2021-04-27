@@ -29,7 +29,7 @@ public interface TournamentRepository extends JpaRepository<Tournament, Long> {
     @RestResource(path = "filters", rel = "filters")
     @Query("SELECT t FROM Tournament t WHERE " +
             "t.user.username = :#{authentication?.name} AND " +
-            "(:name is NULL OR t.name LIKE %:name%) AND " +
+            "(:name IS NULL OR :name = '' OR LOWER(t.name) LIKE CONCAT('%', LOWER(:name), '%')) AND " +
             "((:types) IS NULL OR (SELECT COUNT(b) FROM t.brackets b WHERE b.type.type IN (:types)) > 0) AND " +
             "((:start IS NULL OR :end is NULL) OR t.teams.size between :start AND :end)")
     Page<Tournament> findByTeamsSizeBetween(@Param("name") String name, @Param("types") List<String> types, @Param("start") Integer start, @Param("end") Integer end, Pageable p);
