@@ -16,6 +16,7 @@
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
           <factory-entry name="entityManagerFactory" value="2536ea1c-0848-497e-9080-c82d0dd44f3f" />
+          <factory-entry name="tournament-bracket-generator" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>
