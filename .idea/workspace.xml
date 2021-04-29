@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="tournament-bracket-generator:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b8c5cc4-54d3-46d5-a52e-78f4012cb0ec" name="Default Changelist" comment="deploy">
-      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tournament-bracket-generator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tournament-bracket-generator.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/tournament_bracket_generator_jar/tournament-bracket-generator.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/tournament-bracket-generator.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,9 +78,10 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/target" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -95,6 +97,9 @@
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JavaProjects\tournament-bracket-generator\target" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\JavaProjects\tournament-bracket-generator\src\main\resources\static\" />
     </key>
@@ -211,7 +216,7 @@
       <workItem from="1619375617110" duration="21297000" />
       <workItem from="1619526334115" duration="1712000" />
       <workItem from="1619620672892" duration="15215000" />
-      <workItem from="1619701491716" duration="1224000" />
+      <workItem from="1619701491716" duration="1483000" />
     </task>
     <task id="LOCAL-00001" summary="не initial commit">
       <created>1618752749850</created>
@@ -388,7 +393,21 @@
       <option name="project" value="LOCAL" />
       <updated>1619701674332</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="deploy">
+      <created>1619702848940</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1619702848940</updated>
+    </task>
+    <task id="LOCAL-00027" summary="deploy">
+      <created>1619702866092</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1619702866092</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
