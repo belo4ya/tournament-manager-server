@@ -30,4 +30,11 @@ public class Team extends BaseEntity {
 
     @OneToMany(mappedBy = "team")
     private List<TournamentTeam> tournaments;
+
+    public Team(String name, String logo, Integer rating, User user) {
+        this.name = name;
+        this.logo = logo;
+        this.rating = rating;
+        this.user = user;
+    }
 }

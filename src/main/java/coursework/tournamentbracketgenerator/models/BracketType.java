@@ -21,4 +21,8 @@ public class BracketType extends BaseEntity {
 
     @OneToMany(mappedBy = "type", cascade = CascadeType.ALL)
     private List<Bracket> brackets;
+
+    public BracketType(String type) {
+        this.type = type;
+    }
 }

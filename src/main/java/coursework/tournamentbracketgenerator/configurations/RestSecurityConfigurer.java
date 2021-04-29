@@ -22,7 +22,7 @@ public class RestSecurityConfigurer implements RepositoryRestConfigurer {
 
         cors
                 .addMapping("/**")
-                .allowedOrigins("http://localhost:3000")
+                .allowedOrigins("*")
                 .allowedMethods("*")
                 .allowedHeaders("*");
     }

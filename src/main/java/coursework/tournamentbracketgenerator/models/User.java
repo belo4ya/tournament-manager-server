@@ -31,4 +31,10 @@ public class User extends BaseEntity {
 
     @OneToMany(mappedBy = "user")
     private List<Team> teams;
+
+    public User(String username, String password, List<Role> roles) {
+        this.username = username;
+        this.password = password;
+        this.roles = roles;
+    }
 }
