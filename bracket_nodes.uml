@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.bracket_nodes</OriginalElement>
+  <nodes>
+    <node x="221.0" y="747.5">2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.bracket_nodes</node>
+    <node x="966.0" y="221.0">2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.users_roles</node>
+    <node x="-19.0" y="358.5">2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.bracket_types</node>
+    <node x="741.0" y="265.5">2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.teams</node>
+    <node x="741.0" y="-12.5">2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.users</node>
+    <node x="521.0" y="947.5">2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.bracket_nodes_teams</node>
+    <node x="361.0" y="276.5">2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.tournaments</node>
+    <node x="1101.0" y="38.5">2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.roles</node>
+    <node x="521.0" y="547.5">2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.tournaments_teams</node>
+    <node x="221.0" y="547.5">2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.brackets</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.brackets" target="2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.bracket_types" relationship="REFERENCES">
+      <point x="-20.0" y="-72.5" />
+      <point x="300.0" y="520.0" />
+      <point x="80.0" y="520.0" />
+      <point x="0.0" y="61.5" />
+    </edge>
+    <edge source="2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.bracket_nodes" target="2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.brackets" relationship="REFERENCES">
+      <point x="0.0" y="-72.5" />
+      <point x="0.0" y="72.5" />
+    </edge>
+    <edge source="2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.tournaments_teams" target="2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.teams" relationship="REFERENCES">
+      <point x="0.0" y="-72.5" />
+      <point x="620.0" y="480.0" />
+      <point x="840.0" y="480.0" />
+      <point x="0.0" y="94.5" />
+    </edge>
+    <edge source="2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.tournaments" target="2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.users" relationship="REFERENCES">
+      <point x="0.0" y="-83.5" />
+      <point x="460.0" y="200.0" />
+      <point x="840.0" y="200.0" />
+      <point x="0.0" y="72.5" />
+    </edge>
+    <edge source="2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.bracket_nodes_teams" target="2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.tournaments_teams" relationship="REFERENCES">
+      <point x="0.0" y="-72.5" />
+      <point x="0.0" y="72.5" />
+    </edge>
+    <edge source="2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.brackets" target="2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.tournaments" relationship="REFERENCES">
+      <point x="0.0" y="-72.5" />
+      <point x="320.0" y="520.0" />
+      <point x="460.0" y="520.0" />
+      <point x="0.0" y="83.5" />
+    </edge>
+    <edge source="2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.tournaments_teams" target="2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.tournaments" relationship="REFERENCES">
+      <point x="-20.0" y="-72.5" />
+      <point x="600.0" y="520.0" />
+      <point x="460.0" y="520.0" />
+      <point x="0.0" y="83.5" />
+    </edge>
+    <edge source="2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.users_roles" target="2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.roles" relationship="REFERENCES">
+      <point x="0.0" y="-39.0" />
+      <point x="1020.0" y="200.0" />
+      <point x="1200.0" y="200.0" />
+      <point x="0.0" y="61.5" />
+    </edge>
+    <edge source="2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.teams" target="2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.users" relationship="REFERENCES">
+      <point x="0.0" y="-94.5" />
+      <point x="0.0" y="72.5" />
+    </edge>
+    <edge source="2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.users_roles" target="2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.users" relationship="REFERENCES">
+      <point x="-20.0" y="-39.0" />
+      <point x="1000.0" y="200.0" />
+      <point x="840.0" y="200.0" />
+      <point x="0.0" y="72.5" />
+    </edge>
+    <edge source="2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.bracket_nodes_teams" target="2536ea1c-0848-497e-9080-c82d0dd44f3f.TABLE:postgres.public.bracket_nodes" relationship="REFERENCES">
+      <point x="-20.0" y="-72.5" />
+      <point x="600.0" y="920.0" />
+      <point x="320.0" y="920.0" />
+      <point x="0.0" y="72.5" />
+    </edge>
+  </edges>
+  <settings layout="Directed (Bottom to Top)" zoom="0.55" showDependencies="false" x="843.620320855615" y="504.090909090909" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Columns</Category>
+    <Category>Key columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+
