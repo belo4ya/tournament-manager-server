@@ -16,5 +16,14 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
+    <data-source name="heroku-my-coursework" uuid="1493121b-afe4-4fb4-8045-441385b50cb4">
+      <database-info product="PostgreSQL" version="13.2 (Ubuntu 13.2-1.pgdg20.04+1)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.5" dbms="POSTGRES" exact-version="13.2" exact-driver-version="42.2">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>hjkrkjsqqkpxwj</user-name>
+      <schema-mapping />
+    </data-source>
   </component>
 </project>

@@ -6,6 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="3b8c5cc4-54d3-46d5-a52e-78f4012cb0ec" name="Default Changelist" comment="диаграмма бд">
       <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system.properties" beforeDir="false" afterPath="$PROJECT_DIR$/system.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +47,15 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="MavenRunner">
+    <option name="environmentProperties">
+      <map>
+        <entry key="DB_PASSWORD" value="7bfb0c2c63e47d25a515bd3919faabb2610e3b1f3b995065440a92149db4869e" />
+        <entry key="DB_URL" value="jdbc:postgresql://ec2-52-19-170-215.eu-west-1.compute.amazonaws.com:5432/d4glj5r1m8piic" />
+        <entry key="DB_USER" value="hjkrkjsqqkpxwj" />
+      </map>
+    </option>
   </component>
   <component name="ProjectId" id="1oUNBGLowzGlQjQUyxylxBI4sW5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -78,7 +93,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -194,7 +209,7 @@
       <workItem from="1619246797636" duration="27599000" />
       <workItem from="1619375617110" duration="21297000" />
       <workItem from="1619526334115" duration="1712000" />
-      <workItem from="1619620672892" duration="12297000" />
+      <workItem from="1619620672892" duration="13779000" />
     </task>
     <task id="LOCAL-00001" summary="не initial commit">
       <created>1618752749850</created>
@@ -343,7 +358,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619698185028</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="диаграмма бд">
+      <created>1619698507660</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1619698507660</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
