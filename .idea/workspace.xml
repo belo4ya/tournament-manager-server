@@ -10,22 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b8c5cc4-54d3-46d5-a52e-78f4012cb0ec" name="Default Changelist" comment="deploy">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1493121b-afe4-4fb4-8045-441385b50cb4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1493121b-afe4-4fb4-8045-441385b50cb4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1493121b-afe4-4fb4-8045-441385b50cb4/storage_v2/_src_/database/d4glj5r1m8piic.fQxqjg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1493121b-afe4-4fb4-8045-441385b50cb4/storage_v2/_src_/database/d4glj5r1m8piic.fQxqjg/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_rest_hal_browser_3_3_9_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_2_4_2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/coursework/tournamentbracketgenerator/configurations/MvcSecurityConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/coursework/tournamentbracketgenerator/configurations/MvcSecurityConfigurer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/coursework/tournamentbracketgenerator/configurations/RestSecurityConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/coursework/tournamentbracketgenerator/configurations/RestSecurityConfigurer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/coursework/tournamentbracketgenerator/loaders/ExampleLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/coursework/tournamentbracketgenerator/loaders/ExampleLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/coursework/tournamentbracketgenerator/models/Tournament.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/coursework/tournamentbracketgenerator/models/Tournament.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/coursework/tournamentbracketgenerator/configurations/MvcSecurityConfigurer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/coursework/tournamentbracketgenerator/configurations/MvcSecurityConfigurer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/coursework/tournamentbracketgenerator/configurations/RestSecurityConfigurer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/coursework/tournamentbracketgenerator/configurations/RestSecurityConfigurer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/coursework/tournamentbracketgenerator/loaders/ExampleLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/coursework/tournamentbracketgenerator/loaders/ExampleLoader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tournament-bracket-generator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tournament-bracket-generator.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -241,7 +228,7 @@
       <workItem from="1619703019232" duration="2477000" />
       <workItem from="1619857240914" duration="856000" />
       <workItem from="1619858123353" duration="162000" />
-      <workItem from="1619858322957" duration="4602000" />
+      <workItem from="1619858322957" duration="5296000" />
     </task>
     <task id="LOCAL-00001" summary="не initial commit">
       <created>1618752749850</created>
@@ -460,7 +447,21 @@
       <option name="project" value="LOCAL" />
       <updated>1619704180108</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="deploy">
+      <created>1619862963249</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1619862963249</updated>
+    </task>
+    <task id="LOCAL-00033" summary="deploy">
+      <created>1619862984426</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1619862984426</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
