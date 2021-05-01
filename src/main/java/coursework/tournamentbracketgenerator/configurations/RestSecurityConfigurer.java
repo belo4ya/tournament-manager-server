@@ -22,7 +22,6 @@ public class RestSecurityConfigurer implements RepositoryRestConfigurer {
 
         cors
                 .addMapping("/**")
-                .allowedOrigins("*")
                 .allowedMethods("*")
                 .allowedHeaders("*");
     }

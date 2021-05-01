@@ -31,4 +31,10 @@ public class Tournament extends BaseEntity {
 
     @OneToMany(mappedBy = "tournament")
     private List<Bracket> brackets;
+
+    public Tournament(String name, String logo, User user) {
+        this.name = name;
+        this.logo = logo;
+        this.user = user;
+    }
 }

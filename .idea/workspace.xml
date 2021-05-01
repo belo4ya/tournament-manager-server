@@ -10,8 +10,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b8c5cc4-54d3-46d5-a52e-78f4012cb0ec" name="Default Changelist" comment="deploy">
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tournament-bracket-generator.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1493121b-afe4-4fb4-8045-441385b50cb4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1493121b-afe4-4fb4-8045-441385b50cb4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1493121b-afe4-4fb4-8045-441385b50cb4/storage_v2/_src_/database/d4glj5r1m8piic.fQxqjg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1493121b-afe4-4fb4-8045-441385b50cb4/storage_v2/_src_/database/d4glj5r1m8piic.fQxqjg/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_rest_hal_browser_3_3_9_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/coursework/tournamentbracketgenerator/configurations/MvcSecurityConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/coursework/tournamentbracketgenerator/configurations/MvcSecurityConfigurer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/coursework/tournamentbracketgenerator/configurations/RestSecurityConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/coursework/tournamentbracketgenerator/configurations/RestSecurityConfigurer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/coursework/tournamentbracketgenerator/loaders/ExampleLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/coursework/tournamentbracketgenerator/loaders/ExampleLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/coursework/tournamentbracketgenerator/models/Tournament.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/coursework/tournamentbracketgenerator/models/Tournament.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/coursework/tournamentbracketgenerator/configurations/MvcSecurityConfigurer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/coursework/tournamentbracketgenerator/configurations/MvcSecurityConfigurer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/coursework/tournamentbracketgenerator/configurations/RestSecurityConfigurer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/coursework/tournamentbracketgenerator/configurations/RestSecurityConfigurer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/coursework/tournamentbracketgenerator/loaders/ExampleLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/coursework/tournamentbracketgenerator/loaders/ExampleLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournament-bracket-generator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tournament-bracket-generator.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +84,7 @@
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
@@ -81,7 +97,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/target" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.env" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -94,7 +110,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -126,11 +142,29 @@
     </configuration>
     <configuration name="TournamentBracketGeneratorApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="tournament-bracket-generator" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="true" />
+        <option name="IS_SUBST" value="true" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+          <ENTRY IS_ENABLED="true" PARSER="env" PATH=".env" />
+        </ENTRIES>
+      </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="coursework.tournamentbracketgenerator.TournamentBracketGeneratorApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.SingleEliminationService" />
+      <item itemvalue="Node.js.main.js" />
+      <item itemvalue="Spring Boot.TournamentBracketGeneratorApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Node.js.main.js" />
@@ -204,7 +238,10 @@
       <workItem from="1619526334115" duration="1712000" />
       <workItem from="1619620672892" duration="15215000" />
       <workItem from="1619701491716" duration="1483000" />
-      <workItem from="1619703019232" duration="1146000" />
+      <workItem from="1619703019232" duration="2477000" />
+      <workItem from="1619857240914" duration="856000" />
+      <workItem from="1619858123353" duration="162000" />
+      <workItem from="1619858322957" duration="4602000" />
     </task>
     <task id="LOCAL-00001" summary="не initial commit">
       <created>1618752749850</created>
@@ -416,7 +453,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619703925463</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="deploy">
+      <created>1619704180108</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1619704180108</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,5 +493,9 @@
     <MESSAGE value="диаграмма бд" />
     <MESSAGE value="deploy" />
     <option name="LAST_COMMIT_MESSAGE" value="deploy" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
