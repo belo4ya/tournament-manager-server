@@ -20,21 +20,18 @@ public interface TournamentRepository extends JpaRepository<Tournament, Long> {
     @Query("SELECT t FROM Tournament t WHERE t.user.username = :#{authentication?.name}")
     Page<Tournament> findAllForAuthorizedUser(Pageable p);
 
-    @RestResource(path = "by_name", rel = "by_name")
-    Optional<Tournament> findByName(String name);
-
-    @RestResource(path = "by_name_i", rel = "by_name_i")
-    List<Tournament> findByNameIgnoreCase(String name);
-
     @RestResource(path = "filters", rel = "filters")
     @Query("SELECT t FROM Tournament t WHERE " +
             "t.user.username = :#{authentication?.name} AND " +
             "(:name IS NULL OR :name = '' OR LOWER(t.name) LIKE CONCAT('%', LOWER(:name), '%')) AND " +
             "((:types) IS NULL OR (SELECT COUNT(b) FROM t.brackets b WHERE b.type.type IN (:types)) > 0) AND " +
             "((:start IS NULL OR :end is NULL) OR t.teams.size between :start AND :end)")
-    Page<Tournament> findByTeamsSizeBetween(@Param("name") String name, @Param("types") List<String> types, @Param("start") Integer start, @Param("end") Integer end, Pageable p);
+    Page<Tournament> findByFilters(@Param("name") String name, @Param("types") List<String> types, @Param("start") Integer start, @Param("end") Integer end, Pageable p);
 
 
+
+    @RestResource(exported = false)
+    Optional<Tournament> findByName(String name);
 
     @Override
     @PreAuthorize("#tournament?.user == null or #tournament?.user?.username == authentication?.name")
