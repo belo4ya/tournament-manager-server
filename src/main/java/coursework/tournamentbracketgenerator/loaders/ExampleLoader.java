@@ -20,7 +20,7 @@ public class ExampleLoader implements CommandLineRunner {
     private final User user;
 
     public ExampleLoader(TournamentRepository tournamentRepository, TeamRepository teamRepository, UserRepository userRepository, JwtTokenProvider jwtTokenProvider) {
-        String token = "";
+        String token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTYyMDAyNzM2NiwiZXhwIjoxNjIwMDMwOTY2fQ.ocbPdZtzm_EqeDNtOJPov7Do2BIYv_3UmdFhsWyBp84";
         Authentication authentication = jwtTokenProvider.getAuthentication(token);
         SecurityContextHolder.getContext().setAuthentication(authentication);
         this.tournamentRepository = tournamentRepository;

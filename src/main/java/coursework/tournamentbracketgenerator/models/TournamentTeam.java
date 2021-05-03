@@ -23,6 +23,6 @@ public class TournamentTeam extends BaseEntity {
     @JoinColumn(name = "team_id", nullable = false)
     private Team team;
 
-    @OneToMany(mappedBy = "team")
+    @OneToMany(mappedBy = "tournamentTeam")
     private List<BracketNodeTeam> bracketNodes;
 }

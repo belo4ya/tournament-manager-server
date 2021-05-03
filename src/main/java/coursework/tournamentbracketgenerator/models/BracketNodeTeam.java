@@ -22,6 +22,6 @@ public class BracketNodeTeam extends BaseEntity {
     private BracketNode bracketNode;
 
     @ManyToOne
-    @JoinColumn(name = "team_id", nullable = false)
-    private TournamentTeam team;
+    @JoinColumn(name = "tournament_team_id", nullable = false)
+    private TournamentTeam tournamentTeam;
 }

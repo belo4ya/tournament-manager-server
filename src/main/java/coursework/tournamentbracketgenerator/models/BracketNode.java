@@ -10,7 +10,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "bracket_nodes")
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode(callSuper = true, exclude = { "bracket" })
 @Data
 @NoArgsConstructor
 public class BracketNode extends BaseEntity {

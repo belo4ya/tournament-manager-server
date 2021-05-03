@@ -20,7 +20,7 @@ public class BracketNodeTeamValidator implements Validator {
         if (bracketNodeTeam.getBracketNode() == null) {
             errors.rejectValue("bracketNode", "bracketNode_team.bracketNode.null");
         }
-        if (bracketNodeTeam.getTeam() == null) {
+        if (bracketNodeTeam.getTournamentTeam() == null) {
             errors.rejectValue("team", "bracketNode_team.team.null");
         }
     }

@@ -1,7 +1,6 @@
 package coursework.tournamentbracketgenerator.controllers;
 
 import coursework.tournamentbracketgenerator.repositories.BracketTypeRepository;
-import coursework.tournamentbracketgenerator.repositories.TeamRepository;
 import coursework.tournamentbracketgenerator.repositories.TournamentRepository;
 import coursework.tournamentbracketgenerator.services.brackets.BracketService;
 import coursework.tournamentbracketgenerator.services.brackets.SeedType;
@@ -15,19 +14,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import java.util.stream.Collectors;
-
 
 @RepositoryRestController
 public class TournamentController {
-    private final TournamentRepository tournamentRepository;
     private final BracketTypeRepository bracketTypeRepository;
-    private final TeamRepository teamRepository;
+    private final BracketService bracketService;
 
-    public TournamentController(TournamentRepository tournamentRepository, BracketTypeRepository bracketTypeRepository, TeamRepository teamRepository) {
-        this.tournamentRepository = tournamentRepository;
+    public TournamentController(BracketTypeRepository bracketTypeRepository, BracketService bracketService) {
         this.bracketTypeRepository = bracketTypeRepository;
-        this.teamRepository = teamRepository;
+        this.bracketService = bracketService;
     }
 
     @PostMapping("/tournaments/withBracket")
@@ -42,9 +37,8 @@ public class TournamentController {
             throw new ResourceNotFoundException();
         }
 
-        tournament.setBracketType(bracketTypeRepository.findById(tournament.getBracketType().getId()).orElseThrow(ResourceNotFoundException::new));
-        tournament.setTeams(tournament.getTeams().stream().map((t) -> teamRepository.findById(t.getId()).orElseThrow(ResourceNotFoundException::new)).collect(Collectors.toList()));
+        tournament.setBracketType(bracketTypeRepository.findById(tournament.getBracketType().getId()).orElseThrow());
 
-        return new ResponseEntity<>(assembler.toModel(tournamentRepository.save(BracketService.createTournament(tournament))), HttpStatus.CREATED);
+        return new ResponseEntity<>(assembler.toModel(bracketService.createTournament(tournament)), HttpStatus.CREATED);
     }
 }
