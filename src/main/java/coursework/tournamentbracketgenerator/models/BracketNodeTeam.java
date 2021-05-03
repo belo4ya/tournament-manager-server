@@ -15,7 +15,6 @@ import javax.persistence.Table;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
-@ToString
 public class BracketNodeTeam extends BaseEntity {
 
     @ManyToOne

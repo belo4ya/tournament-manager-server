@@ -13,7 +13,6 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
-@ToString
 public class BracketNode extends BaseEntity {
 
     @Column(nullable = false)

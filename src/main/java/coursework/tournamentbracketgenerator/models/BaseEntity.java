@@ -17,7 +17,6 @@ import java.util.Calendar;
 @MappedSuperclass
 @Data
 @NoArgsConstructor
-@ToString
 public class BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

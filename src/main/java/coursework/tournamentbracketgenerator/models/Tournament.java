@@ -13,7 +13,6 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
-@ToString
 public class Tournament extends BaseEntity {
 
     @Column(nullable = false, unique = true)
@@ -27,7 +26,7 @@ public class Tournament extends BaseEntity {
     private User user;
 
     @OneToMany(mappedBy = "tournament")
-    private List<TournamentTeam> teams;
+    private List<Team> teams;
 
     @OneToMany(mappedBy = "tournament")
     private List<Bracket> brackets;
