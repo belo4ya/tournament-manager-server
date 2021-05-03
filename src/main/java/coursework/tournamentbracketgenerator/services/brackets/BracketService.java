@@ -2,6 +2,7 @@ package coursework.tournamentbracketgenerator.services.brackets;
 
 import coursework.tournamentbracketgenerator.models.*;
 import coursework.tournamentbracketgenerator.repositories.*;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,6 +13,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class BracketService {
+    private final UserRepository userRepository;
     private final TournamentTeamRepository tournamentTeamRepository;
     private final TeamRepository teamRepository;
     private final BracketNodeTeamRepository bracketNodeTeamRepository;
@@ -19,7 +21,8 @@ public class BracketService {
     private final BracketNodeRepository bracketNodeRepository;
     private final TournamentRepository tournamentRepository;
 
-    public BracketService(TournamentTeamRepository tournamentTeamRepository, TeamRepository teamRepository, BracketNodeTeamRepository bracketNodeTeamRepository, BracketRepository bracketRepository, BracketNodeRepository bracketNodeRepository, TournamentRepository tournamentRepository) {
+    public BracketService(UserRepository userRepository, TournamentTeamRepository tournamentTeamRepository, TeamRepository teamRepository, BracketNodeTeamRepository bracketNodeTeamRepository, BracketRepository bracketRepository, BracketNodeRepository bracketNodeRepository, TournamentRepository tournamentRepository) {
+        this.userRepository = userRepository;
         this.tournamentTeamRepository = tournamentTeamRepository;
         this.teamRepository = teamRepository;
         this.bracketNodeTeamRepository = bracketNodeTeamRepository;
@@ -33,6 +36,7 @@ public class BracketService {
         Tournament tournament = new Tournament();
         tournament.setName(dto.getName());
         tournament.setLogo(dto.getLogo());
+        tournament.setUser(userRepository.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName()).orElse(null));
         tournament = tournamentRepository.save(tournament);
 
         Tournament finalTournament = tournament;
