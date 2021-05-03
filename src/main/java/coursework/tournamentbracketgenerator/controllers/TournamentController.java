@@ -1,7 +1,6 @@
 package coursework.tournamentbracketgenerator.controllers;
 
 import coursework.tournamentbracketgenerator.repositories.BracketTypeRepository;
-import coursework.tournamentbracketgenerator.repositories.TournamentRepository;
 import coursework.tournamentbracketgenerator.services.brackets.BracketService;
 import coursework.tournamentbracketgenerator.services.brackets.SeedType;
 import coursework.tournamentbracketgenerator.services.brackets.TournamentDto;
