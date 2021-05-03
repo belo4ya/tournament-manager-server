@@ -26,7 +26,7 @@ public class Tournament extends BaseEntity {
     private User user;
 
     @OneToMany(mappedBy = "tournament")
-    private List<Team> teams;
+    private List<TournamentTeam> teams;
 
     @OneToMany(mappedBy = "tournament")
     private List<Bracket> brackets;
