@@ -1,6 +1,8 @@
 package coursework.tournamentbracketgenerator.controllers;
 
+import coursework.tournamentbracketgenerator.exceptions.TournamentUniqueNameException;
 import coursework.tournamentbracketgenerator.repositories.BracketTypeRepository;
+import coursework.tournamentbracketgenerator.repositories.TournamentRepository;
 import coursework.tournamentbracketgenerator.services.brackets.BracketService;
 import coursework.tournamentbracketgenerator.services.brackets.SeedType;
 import coursework.tournamentbracketgenerator.services.brackets.TournamentDto;
@@ -18,10 +20,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class TournamentController {
     private final BracketTypeRepository bracketTypeRepository;
     private final BracketService bracketService;
+    private final TournamentRepository tournamentRepository;
 
-    public TournamentController(BracketTypeRepository bracketTypeRepository, BracketService bracketService) {
+    public TournamentController(BracketTypeRepository bracketTypeRepository, BracketService bracketService, TournamentRepository tournamentRepository) {
         this.bracketTypeRepository = bracketTypeRepository;
         this.bracketService = bracketService;
+        this.tournamentRepository = tournamentRepository;
     }
 
     @PostMapping("/tournaments/withBracket")
@@ -34,6 +38,10 @@ public class TournamentController {
         SeedType seedType = SeedType.valueOf(tournament.getSeedType().toUpperCase());
         if (!(seedType == SeedType.FIFO || seedType == SeedType.RANDOM || seedType == SeedType.RATING)) {
             throw new ResourceNotFoundException();
+        }
+
+        if (tournamentRepository.findByName(tournament.getName()).isPresent()) {
+            throw new TournamentUniqueNameException();
         }
 
         tournament.setBracketType(bracketTypeRepository.findById(tournament.getBracketType().getId()).orElseThrow());
