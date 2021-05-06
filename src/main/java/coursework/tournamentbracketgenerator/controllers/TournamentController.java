@@ -29,7 +29,7 @@ public class TournamentController {
     }
 
     @PostMapping("/tournaments/withBracket")
-    public ResponseEntity<PersistentEntityResource> createTournament(@RequestBody TournamentDto tournament, PersistentEntityResourceAssembler assembler) {
+    public ResponseEntity<PersistentEntityResource> createTournament(@RequestBody TournamentDto tournament, PersistentEntityResourceAssembler assembler) throws Exception {
         if (tournament.getName().equals("") || tournament.getName() == null || tournament.getBracketType() == null ||
                 tournament.getSeedType() == null || tournament.getTeams() == null) {
             throw new ResourceNotFoundException();
@@ -46,6 +46,6 @@ public class TournamentController {
 
         tournament.setBracketType(bracketTypeRepository.findById(tournament.getBracketType().getId()).orElseThrow());
 
-        return new ResponseEntity<>(assembler.toModel(bracketService.createTournament(tournament)), HttpStatus.CREATED);
+        return new ResponseEntity<>(assembler.toModel(bracketService.doMagic(tournament)), HttpStatus.CREATED);
     }
 }
