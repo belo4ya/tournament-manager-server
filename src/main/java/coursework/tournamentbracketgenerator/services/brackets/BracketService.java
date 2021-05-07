@@ -92,6 +92,7 @@ public class BracketService {
 
         bracketNodes.forEach((node) -> System.out.println("Round: " + node.getRound()));
 
+
         bracket.setBracketNodes(bracketNodes);
         return bracketRepository.save(bracket);
     }
